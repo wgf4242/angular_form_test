@@ -1,0 +1,41 @@
+{
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		}
+	],
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"**/inline.bundle.js",
+				"**/inline.bundle.js.map",
+				"**/main.bundle.js",
+				"**/main.bundle.js.map",
+				"**/polyfills.bundle.js",
+				"**/polyfills.bundle.js.map",
+				"**/styles.bundle.css",
+				"**/styles.bundle.css.map",
+				"**/vendor.bundle.js",
+				"**/vendor.bundle.js.map"
+			],
+			"folder_exclude_patterns":
+			[
+				".idea",
+				"Lib",
+				"Scripts",
+				"Include",
+				"tcl",
+				"e2e",
+				"node_modules",
+				".vscode"
+			],
+			"path": "."
+		}
+	]
+}
