@@ -10,12 +10,12 @@ client/node_modules
 
 # IDEs and editors
 .idea
+!.idea/*.iml
 .project
 .classpath
 .c9/
 *.launch
 .settings/
-*.sublime-workspace
 
 # IDE - VSCode
 .vscode/*
