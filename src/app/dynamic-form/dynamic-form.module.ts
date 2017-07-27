@@ -8,14 +8,14 @@ import { DynamicFormComponent } from './dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
 import { AppDynamicFormComponent } from "app/dynamic-form/app.dynamic-form.component";
 
-const router = [
+const routes = [
     { path: 'dynamic-form', component: AppDynamicFormComponent },
 ];
 
 @NgModule({
     imports: [
         BrowserModule, ReactiveFormsModule,
-        RouterModule.forRoot(router)
+        RouterModule.forRoot(routes)
     ],
     declarations: [
         DynamicFormComponent,

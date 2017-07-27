@@ -1,45 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from "app/app-routing.module";
+import { DynamicFormModule } from "app/dynamic-form/dynamic-form.module";
+import { ReactiveFormModule } from "app/reactive-form/reactive-form.module";
 
 import { AppComponent } from './app.component';
-import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { DynamicFormModule } from "app/dynamic-form/dynamic-form.module";
-import { SimpleFormComp } from "app/reactive-form/simple-form.component";
-import { SimpleFormGroupComponent } from "app/reactive-form/simpile-form-group.components";
+import { AppTemplateComponent } from "app/app-template/app-template.component";
 
-const routes = [
-  // { path: '', AppComponent },
-  // { path: '', redirectTo: 'page1', pathMatch: 'full' },
-  { path: 'reacitve-form', component: ReactiveFormComponent },
-  { path: 'simple-form', component: SimpleFormComp },
-  { path: 'simple-form-group', component: SimpleFormGroupComponent },
-];
 
 @NgModule({
   imports: [
-    BrowserModule,
-    ReactiveFormsModule,
+    BrowserModule, ReactiveFormsModule, FormsModule,
     DynamicFormModule,
-    FormsModule,
-    RouterModule.forRoot(routes)
+    ReactiveFormModule,
+    AppRoutingModule,
   ],
-  
+
   declarations: [
     AppComponent,
-    ReactiveFormComponent,
     DashboardComponent,
-    SimpleFormComp,
-    SimpleFormGroupComponent
+    AppTemplateComponent
   ],
-  
+
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor() {
-  }
-}
+export class AppModule { }
