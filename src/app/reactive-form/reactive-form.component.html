@@ -1,0 +1,20 @@
+<div>
+  <form [formGroup]="addForm">
+   <input type="text" placeholder="Enter username" formControlName="username" />
+   <input type="text" placeholder="Enter Email Address" formControlName="email"/>
+   <input type="password" placeholder="Enter Password" formControlName="password" />
+   <input type="password" placeholder="Confirm Password" name="password2" formControlName="password2"/>
+   <div class='error' *ngIf="addForm.controls.password2.touched">
+    <div class="alert-danger errormessageadduser" *ngIf="addForm.hasError('mismatchedPasswords')">                                  Passwords do not match
+  </div>
+</div>
+<select name="Role" formControlName="role">
+    <option value="admin" >Admin</option>
+    <option value="Accounts">Accounts</option>
+    <option value="guest">Guest</option>
+</select>
+<br/>
+<br/>
+<button type="submit" (click)="addUser()"><span><i class="fa fa-user-plus" aria-hidden="true"></i></span> Add User </button>
+</form>
+</div>
