@@ -23,6 +23,11 @@ export class ReactiveFormComponent implements OnInit {
         //< --replace args with email_1 and email_2
         validator: matchingPasswords('password', 'password2')
       })
+
+    //我们订阅它的valueChanged可观察属性
+    this.addForm.valueChanges.subscribe((value: string) => {
+      console.log('form changed to: ', value);
+    } );
   };
 
   addUser() {

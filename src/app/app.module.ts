@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from "app/app-routing.module";
 import { DynamicFormModule } from "app/dynamic-form/dynamic-form.module";
-import { ReactiveFormModule } from "app/reactive-form/reactive-form.module";
+import { AppReactiveFormModule } from "app/reactive-form/reactive-form.module";
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,7 +16,7 @@ import { AppTemplateComponent } from "app/app-template/app-template.component";
   imports: [
     BrowserModule, ReactiveFormsModule, FormsModule,
     DynamicFormModule,
-    ReactiveFormModule,
+    AppReactiveFormModule,
     AppRoutingModule,
   ],
 

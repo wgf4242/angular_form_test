@@ -1,3 +1,4 @@
+// https://segmentfault.com/a/1190000009912108
 import { Component, OnInit } from '@angular/core';
 import { Theme } from "./theme.interface";
 import { User } from "./user.interface";
