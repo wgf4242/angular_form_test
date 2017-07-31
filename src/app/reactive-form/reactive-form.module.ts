@@ -10,6 +10,8 @@ import { ReactiveFormComponent } from "./reactive-form.component";
 import { MyFormControlComp } from "app/reactive-form/my-form-control.component";
 import { AppNestedFormComponent } from "app/reactive-form/nested-form/app-nested-form.component";
 import { AppNestedForm2Component } from "app/reactive-form/nested-form2/app-nested-form.component";
+import { AddressComponent } from "app/reactive-form/nested-form2/address.component";
+import { AppNestedFormBComponent } from "app/reactive-form/nested-form-b/app-nested-form-b.component";
 
 const routes = [
   { path: 'reacitve-form', component: ReactiveFormComponent },
@@ -18,6 +20,7 @@ const routes = [
   { path: 'my-form-control', component: MyFormControlComp },
   { path: 'app-nested-form', component: AppNestedFormComponent },
   { path: 'app-nested-form2', component: AppNestedForm2Component },
+  { path: 'app-nested-form-b', component: AppNestedFormBComponent },
 
 ];
 
@@ -35,7 +38,8 @@ const routes = [
     SimpleFormGroupComponent,
     MyFormControlComp,
     AppNestedFormComponent,
-    AppNestedForm2Component
+    AppNestedForm2Component, AddressComponent,
+    AppNestedFormBComponent,
   ],
 })
 export class AppReactiveFormModule {

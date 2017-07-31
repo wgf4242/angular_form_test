@@ -1,0 +1,37 @@
+<div class="container">
+  <h3>Register page</h3>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="loginCredentials">
+      <div class="form-group">
+        <div>
+          <label for="login">Login</label>
+          <input id="login" type="text" class="form-control" formControlName="login">
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="text" class="form-control" formControlName="email">
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input id="password" type="text" class="form-control" formControlName="password">
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row" > -->
+    <div formGroupName="hobbies">
+      <div class="form-group">
+        <label>Hobbies array:</label>
+        <div *ngFor="let hobby of myForm.get('hobbies').controls; let i = index">
+          <div formGroupName="{{i}}" class="form-inline">
+            <input id="hobby_{{i}}" type="text" class="form-control" formControlName="hobby">
+            <button *ngIf="myForm.get('hobbies').length > 1" (click)="removeHobby(i)">x</button>
+          </div>
+        </div>
+        <button (click)="onAddHobby()">Add hobby</button>
+      </div>
+    </div>
+    <!-- </div> -->
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+  </form>
+</div>

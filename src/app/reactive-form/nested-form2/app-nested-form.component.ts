@@ -4,7 +4,6 @@ import { Customer } from './customer.interface';
 
 @Component({
   moduleId: module.id,
-//   selector: 'my-app',
   templateUrl: 'app-nested-form.component.html',
 })
 export class AppNestedForm2Component implements OnInit {
@@ -15,10 +14,16 @@ export class AppNestedForm2Component implements OnInit {
     ngOnInit() {
         this.myForm = this._fb.group({
             name: ['', [Validators.required, Validators.minLength(5)]],
-            addresses: this._fb.array([
-                this.initAddress(),
-            ])
+            addresses: this._fb.array([])
         });
+        
+        // add address
+        this.addAddress();
+        
+        /* subscribe to addresses value changes */
+        // this.myForm.controls['addresses'].valueChanges.subscribe(x => {
+        //   console.log(x);
+        // })
     }
 
     initAddress() {
@@ -30,7 +35,14 @@ export class AppNestedForm2Component implements OnInit {
 
     addAddress() {
         const control = <FormArray>this.myForm.controls['addresses'];
-        control.push(this.initAddress());
+        const addrCtrl = this.initAddress();
+        
+        control.push(addrCtrl);
+        
+        /* subscribe to individual address value changes */
+        // addrCtrl.valueChanges.subscribe(x => {
+        //   console.log(x);
+        // })
     }
 
     removeAddress(i: number) {
@@ -44,3 +56,5 @@ export class AppNestedForm2Component implements OnInit {
         console.log(model);
     }
 }
+
+    
